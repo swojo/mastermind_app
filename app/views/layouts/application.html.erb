@@ -7,8 +7,20 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+  <header class="navbar navbar-fixed-top nav navbar-inverse">
+    <div class="navbar-inner">
+      <div class="containter">
+      <nav>
+        <ul class="nav pull-right">
+          <li><%= link_to "Play", root_path %></li>
+          <li><%= link_to "Game Rules", rules_path %></li>
+        </ul>
+      </nav>
+      </div>
+    </div>
+  </header>
+  <div class="container">
+    <%= yield %>
+  </div>
 </body>
 </html>
