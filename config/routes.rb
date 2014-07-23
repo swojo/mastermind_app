@@ -1,6 +1,8 @@
 MastermindApp::Application.routes.draw do
+#  get "games/play"
   root 'static_pages#home'
   get '/rules' => 'static_pages#rules', as: 'rules'
+  get '/play' => 'games#play', as: 'play'
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

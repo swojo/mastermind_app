@@ -12,7 +12,7 @@ describe "StaticPages" do
     describe "Click Play" do
       before{ click_button "Play Here!" }   
 
-      it {should have_content('Play Mastermind') }
+      it {should have_content('Welcome to Mastermind') }
     end
   
   end

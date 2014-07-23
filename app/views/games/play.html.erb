@@ -1,0 +1,10 @@
+<% #game_text = Mastermind:: GameText.new %>
+<h1>Welcome to Mastermind</h1>
+    <p>
+      <% if @display_text %>
+        <% @display_text.each do |message| %> 
+          <br><%= message %></br>
+        <% end %>
+      <% end %>
+    </p>
+</h1>
