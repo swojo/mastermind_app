@@ -1,0 +1,12 @@
+<div class="center hero-unit">
+  <h1>Welcome to Mastermind</h1>
+  <div class="row">
+   <%= Mastermind::GameText.new.message(:prompt) %><br />
+    <%= form_for :code do |f| %>
+    <%= f.text_field :code%><br />
+    <%= f.submit "Play", class: "btn btn-large btn-primary" %>
+  <% end %>
+  </div>
+</div>
+
+
