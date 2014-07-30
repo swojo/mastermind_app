@@ -2,7 +2,7 @@
 <h1>Welcome to Mastermind</h1>
     <p>
       <% if @display_text %>
-          <ul>
+          <ul id="messages">
              <% @display_text.each do |message| %>
              <li> <%= message %> </li>
              <% end %>
@@ -10,5 +10,4 @@
              <br><%= link_to "Next Guess", '#' , class: "btn btn-large btn-primary" %></br>
       <% end %>
     </p>
-</h1>
 

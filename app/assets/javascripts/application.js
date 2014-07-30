@@ -16,11 +16,16 @@
 //= require_tree .
 
 $(document).ready(function(){
-  $("ul li").hide();
-  var message_array = $("ul li");
+  var messages = $("#messages");
+  var elements = messages.children();
+  elements.hide();
+//  $("li").hide();
+  var message_array = elements;
   var count = 2;
-    $('.btn').click(function(){
+  $('.btn').click(function(){
+    if(count < message_array.length){
       $(message_array[count]).show();
       ++count
-    });
+    }
+  });
 });

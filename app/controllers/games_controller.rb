@@ -7,13 +7,9 @@ class GamesController < ApplicationController
   end
  
   def play
-    code = "RRRR"
-#    code = params[:code][:code]
- #   index = params[:index]
+    code = params[:code][:code]
   
     io = IO.new(code)
-#    if(index.present?)
-#      @index = index + 1
     if(Mastermind::Validator.new(io.formatted_input, 4, %w{R G O Y B P}).valid?)
       game_text = Mastermind::GameText.new
       io = IO.new(code)
