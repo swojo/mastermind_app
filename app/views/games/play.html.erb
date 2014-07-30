@@ -2,9 +2,13 @@
 <h1>Welcome to Mastermind</h1>
     <p>
       <% if @display_text %>
-        <% @display_text.each do |message| %> 
-          <br><%= message %></br>
-        <% end %>
+          <ul>
+             <% @display_text.each do |message| %>
+             <li> <%= message %> </li>
+             <% end %>
+          </ul>
+             <br><%= link_to "Next Guess", '#' , class: "btn btn-large btn-primary" %></br>
       <% end %>
     </p>
 </h1>
+

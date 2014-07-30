@@ -14,3 +14,13 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+$(document).ready(function(){
+  $("ul li").hide();
+  var message_array = $("ul li");
+  var count = 2;
+    $('.btn').click(function(){
+      $(message_array[count]).show();
+      ++count
+    });
+});
