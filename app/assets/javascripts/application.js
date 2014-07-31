@@ -19,13 +19,12 @@ $(document).ready(function(){
   var messages = $("#messages");
   var elements = messages.children();
   elements.hide();
-//  $("li").hide();
   var message_array = elements;
-  var count = 2;
+  var count = 0;
   $('.btn').click(function(){
     if(count < message_array.length){
       $(message_array[count]).show();
-      ++count
+      ++count;
     }
   });
 });
