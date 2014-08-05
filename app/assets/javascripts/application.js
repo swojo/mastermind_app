@@ -16,15 +16,33 @@
 //= require_tree .
 
 $(document).ready(function(){
-  var messages = $("#messages");
-  var elements = messages.children();
-  elements.hide();
-  var message_array = elements;
-  var count = 0;
+
+function Mastermind() {
+  this.messages = $("#messages");
+  this.elements = this.messages.children();
+  this.message_array = this.elements;
+  this.count = 0;
+  this.elements.hide();
+}
+
+Mastermind.prototype.addButtonHandler = function() {
   $('.btn').click(function(){
     if(count < message_array.length){
       $(message_array[count]).show();
       ++count;
     }
   });
+}
+
+  Mastermind();
+  Mastermind.prototype.addButtonHandler();
+ 
+  text = $("#code_code")
+
+  $(".button_row").click(function(event){
+   
+    var id = event.target.id;
+    if(typeof(id) != 'undefined')
+      window.text.val(window.text.val()+ id[0]);
+  }); 
 });
