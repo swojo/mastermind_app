@@ -12,12 +12,12 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
+// require turbolinks
 //= require_tree .
 
 $(document).ready(function(){
 
-function Mastermind() {
+var Mastermind = function() {
   this.messages = $("#messages");
   this.elements = this.messages.children();
   this.message_array = this.elements;
@@ -39,8 +39,7 @@ Mastermind.prototype.addButtonHandler = function() {
  
   text = $("#code_code")
 
-  $(".button_row").click(function(event){
-   
+  $(".button_row button").click(function(event){
     var id = event.target.id;
     if(typeof(id) != 'undefined')
       window.text.val(window.text.val()+ id[0]);

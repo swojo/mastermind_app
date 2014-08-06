@@ -4,8 +4,12 @@
       <% if @display_text %>
           <ul id="messages">
              <% @display_text.each do |message| %>
-             <li> <%= message %> </li>
-             <% end %>
+             <li><% JSON.parse(message).join.each_char do |letter|%>
+                  
+                  <div class="color_box <%=letter%>" style="display: inline-block;">&nbsp;</div>    
+                 <% end %> </li> 
+              <% end %>
+          <li><%= @result %></li>
           </ul>
              <br><%= link_to "Next Guess", '#' , class: "btn btn-large btn-primary" %></br>
       <% end %>

@@ -13,7 +13,7 @@ class GamesController < ApplicationController
     if(Mastermind::Validator.new(io.formatted_input, 4, %w{R G O Y B P}).valid?)
       game_text = Mastermind::GameText.new
       io = IO.new(code)
-      Game.new(game_text, io).play_game(io.formatted_input)
+      @result=Game.new(game_text, io).play_game(io.formatted_input)
       @index = 0
       @display_text = io.messages
     else

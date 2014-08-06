@@ -38,9 +38,9 @@ class Game
       
     def end_of_game(result)
       if(result.correct?)
-        @terminal.display(@game_text.message(:win, result))
+        @game_text.message(:win, result)
       else
-        @terminal.display(@game_text.message(:lose, result))
+        @game_text.message(:lose, result)
       end
     end
 end

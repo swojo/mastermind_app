@@ -10,6 +10,7 @@ gem 'sprockets', '2.11.0'
 group :development, :test do
   gem 'sqlite3'
   gem 'rspec-rails', '~> 3.0.2'
+	gem 'teaspoon'
 end
 
 group :test do
