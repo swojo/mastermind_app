@@ -1,4 +1,5 @@
 MastermindApp::Application.routes.draw do
+  mount JasmineRails::Engine => '/specs' if defined?(JasmineRails)
 #  get "games/play"
   get '/' => 'static_pages#home', as: 'root'
   get '/rules' => 'static_pages#rules', as: 'rules'

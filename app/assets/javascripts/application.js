@@ -28,9 +28,13 @@ var Mastermind = function() {
 Mastermind.prototype.addButtonHandler = function() {
   $('.btn').click(function(){
     if(count < message_array.length){
-      $(message_array[count]).show();
+      $(message_array[count]).fadeIn();
       ++count;
+      if(count == message_array.length){
+        $('.btn').hide();
+      }
     }
+    
   });
 }
 
@@ -41,7 +45,6 @@ Mastermind.prototype.addButtonHandler = function() {
 
   $(".button_row button").click(function(event){
     var id = event.target.id;
-    if(typeof(id) != 'undefined')
-      window.text.val(window.text.val()+ id[0]);
+    window.text.val(window.text.val()+ id[0]);
   }); 
 });
