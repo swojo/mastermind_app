@@ -15,36 +15,47 @@
 // require turbolinks
 //= require_tree .
 
-$(document).ready(function(){
 
-var Mastermind = function() {
-  this.messages = $("#messages");
-  this.elements = this.messages.children();
-  this.message_array = this.elements;
+function Mastermind() {
+  this.message_array = $('#messages').children();
   this.count = 0;
-  this.elements.hide();
+  this.message_array.hide();
 }
 
 Mastermind.prototype.addButtonHandler = function() {
-  $('.btn').click(function(){
-    if(count < message_array.length){
-      $(message_array[count]).fadeIn();
-      ++count;
-      if(count == message_array.length){
-        $('.btn').hide();
-      }
-    }
-    
-  });
+  $('.btn').click($.proxy(this.onClick, this));
 }
 
-  Mastermind();
-  Mastermind.prototype.addButtonHandler();
- 
-  text = $("#code_code")
+Mastermind.prototype.onClick= function(){
+  if(this.count < this.message_array.length){
+    $(this.message_array[this.count]).fadeIn();
+    ++this.count;
+    if(this.count == this.message_array.length){
+      $('.btn').hide();
+    }
+  }
+}
 
-  $(".button_row button").click(function(event){
+
+function Colors(){
+  this.text = $("#code_code");
+}
+
+Colors.prototype.colorButtonHandler = function(){
+  $(".button_row button").click($.proxy(this.onClick, this)); 
+} 
+
+Colors.prototype.onClick = function(event) {
     var id = event.target.id;
-    window.text.val(window.text.val()+ id[0]);
-  }); 
+    this.text.val(this.text.val()+ id[0]);
+}
+
+$(document).ready(function(){
+
+  var mastermind = new Mastermind();
+  mastermind.addButtonHandler();
+
+  var colors = new Colors();
+  colors.colorButtonHandler();
+ 
 });
